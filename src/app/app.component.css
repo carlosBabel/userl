@@ -1,0 +1,34 @@
+.content {
+    display: block !important; 
+}
+
+#ej1 div {
+    padding: 10px;
+    margin: 5px;
+    float: left;
+    font-size: 30px;
+}
+
+#ej1 div:first-child {
+    display: none;
+}
+
+#ej1 div:nth-child(3n +1) {
+    color: white;
+    background: red;
+}
+
+#ej1 div:nth-child(5n +1) {
+    color: white;
+    background: blue;
+}
+
+#ej1 div:nth-child(3n +1):nth-child(5n +1) {
+    color: white;
+    background: purple;
+}
+
+#ej1 div:last-child {
+    color: white;
+    background: green;
+}
