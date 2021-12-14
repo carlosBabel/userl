@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 
 import {PaginatorModule} from 'primeng/paginator';
+import {TableModule} from 'primeng/table';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import {PaginatorModule} from 'primeng/paginator';
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    PaginatorModule
+    PaginatorModule,
+    TableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -9,7 +9,7 @@ export class HttpService {
 
   constructor(private http: HttpClient) { }
 
-  getPokemon(): Observable<any> {
-    return this.http.get('https://pokeapi.co/api/v2/pokemon?limit=100&offset=200');
+  getPokemon(pagina: number): Observable<any> {
+    return this.http.get(`https://pokeapi.co/api/v2/pokemon?limit=5&offset=${(pagina) * 5}`);
   }
 }

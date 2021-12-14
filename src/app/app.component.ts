@@ -9,17 +9,31 @@ import { HttpService } from './services/http.service';
 export class AppComponent implements OnInit {
   title = 'userl';
 
+  totalRecords = 100;
+  pokemons: string[];
+
   constructor(private httpService: HttpService) {}
 
   ngOnInit(): void {
-      this.httpService.getPokemon().subscribe((result) => {
-        const test = result.results.map(a => a.name);
-        console.log(test);
+      this.httpService.getPokemon(0).subscribe((result) => {
+        this.pokemons = result.results.map(a => a.name);
       })
 
   }
 
   counter(i: number) {
     return new Array(i);
+  }
+
+  paginate(event) {
+    console.log(event.page)
+
+    this.httpService.getPokemon(event.page).subscribe((result) => {
+      this.pokemons = result.results.map(a => a.name);
+    })
+  }
+
+  clear(x) {
+    
   }
 }
